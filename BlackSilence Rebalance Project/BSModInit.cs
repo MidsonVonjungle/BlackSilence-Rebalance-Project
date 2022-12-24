@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using BigDLL4221.Enum;
 using BigDLL4221.Models;
 using BigDLL4221.Utils;
+using LOR_DiceSystem;
+using MonoMod.Utils;
+using UnityEngine;
 
 namespace BlackSilence_Rebalance_Project
 {
@@ -33,6 +37,30 @@ namespace BlackSilence_Rebalance_Project
                 Uri.UnescapeDataString(new UriBuilder(Assembly.GetExecutingAssembly().CodeBase).Path));
             ModParameters.Path.Add(BSRebalanceModParameters.PackageId, BSRebalanceModParameters.Path);
             ModParameters.Assemblies.Add(Assembly.GetExecutingAssembly());
+            OnInitRewards();
+            OnInitCards();
+        }
+        private static void OnInitRewards()
+        {
+            ModParameters.StartUpRewardOptions.Add(new RewardOptions( 
+                
+                keypages: new List<LorId> { new LorId(BSRebalanceModParameters.PackageId, 10000001) }
+            ));
+        }
+        private static void OnInitCards()
+        {
+            ModParameters.CardOptions.Add(BSRebalanceModParameters.PackageId, new List<CardOptions>
+            {
+                new CardOptions(1, CardOption.NoInventory),
+                new CardOptions(2, CardOption.NoInventory),
+                new CardOptions(3, CardOption.NoInventory),
+                new CardOptions(4, CardOption.NoInventory),
+                new CardOptions(5, CardOption.NoInventory),
+                new CardOptions(6, CardOption.NoInventory),
+                new CardOptions(7, CardOption.NoInventory),
+                new CardOptions(8, CardOption.NoInventory),
+                new CardOptions(9, CardOption.NoInventory),
+            });
         }
     }
 }
