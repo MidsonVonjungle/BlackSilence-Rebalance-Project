@@ -6,7 +6,7 @@ namespace BlackSilence_Rebalance_Project
 {
     public static class BSRebalanceModParameters
     {
-        public static string PackageId = "BSRebalnce.md5488";
+        public static string PackageId = "MidsonBSRebalance.md5488";
 
         public static string Path;
         //public static LorId FuriosoCard = new LorId(PackageId, 10);
