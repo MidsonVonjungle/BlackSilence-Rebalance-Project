@@ -7,24 +7,25 @@ namespace BlackSilence_Rebalance_Project.Passives
 {
     public class PassiveAbility_CardBuffsPassive_md5488 : PassiveAbilityBase
     {
-        public override void OnRoundStart()
+        public override void OnRoundStartAfter()
         {
-            var buffUsed = new List<Type>();
+            var givedBuffUnits = new List<BattleUnitModel>();
             var buffToGive = new List<Type>();
-            foreach (var buff in BSRebalanceModParameters.CardsBuff)
-                if (owner.allyCardDetail.GetHand()
-                    .Exists(x => x.GetID() == new LorId(BSRebalanceModParameters.PackageId, buff.Key)))
-                    buffToGive.Add(buff.Value);
-            if (!buffToGive.Any()) return;
-            foreach (var unit in BattleObjectManager.instance.GetAliveList(
-                         UnitUtil.ReturnOtherSideFaction(owner.faction)))
+            foreach (var card in owner.allyCardDetail.GetHand())
             {
-                if (buffToGive.Count == buffUsed.Count) break;
-                var buff = RandomUtil.SelectOne(buffToGive);
-                while (buffUsed.Contains(buff))
-                    buff = RandomUtil.SelectOne(buffToGive);
-                buffUsed.Add(buff);
-                unit.bufListDetail.AddBuf((BattleUnitBuf)Activator.CreateInstance(buff));
+                if (card.GetID().packageId != BSRebalanceModParameters.PackageId || !BSRebalanceModParameters.CardsBuff.TryGetValue(card.GetID().id, out var buffType)) continue;
+                buffToGive.Add(buffType);
+            }
+            var enemyList = BattleObjectManager.instance.GetAliveList(UnitUtil.ReturnOtherSideFaction(owner.faction));
+            if (!buffToGive.Any() || !enemyList.Any()) return;
+            foreach (var buffType in buffToGive)
+            {
+                if (givedBuffUnits.Count == enemyList.Count) return;
+                var unit = RandomUtil.SelectOne(enemyList);
+                while (givedBuffUnits.Contains(unit))
+                    unit = RandomUtil.SelectOne(enemyList);
+                givedBuffUnits.Add(unit);
+                unit.bufListDetail.AddBuf((BattleUnitBuf)Activator.CreateInstance(buffType));
             }
         }
     }
