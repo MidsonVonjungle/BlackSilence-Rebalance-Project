@@ -9,7 +9,6 @@ namespace BlackSilence_Rebalance_Project.Passives
     {
         public override void OnRoundStartAfter()
         {
-            var givedBuffUnits = new List<BattleUnitModel>();
             var buffToGive = new List<Type>();
             foreach (var card in owner.allyCardDetail.GetHand())
             {
@@ -20,11 +19,9 @@ namespace BlackSilence_Rebalance_Project.Passives
             if (!buffToGive.Any() || !enemyList.Any()) return;
             foreach (var buffType in buffToGive)
             {
-                if (givedBuffUnits.Count == enemyList.Count) return;
+                if (!enemyList.Any()) return;
                 var unit = RandomUtil.SelectOne(enemyList);
-                while (givedBuffUnits.Contains(unit))
-                    unit = RandomUtil.SelectOne(enemyList);
-                givedBuffUnits.Add(unit);
+                enemyList.Remove(unit);
                 unit.bufListDetail.AddBuf((BattleUnitBuf)Activator.CreateInstance(buffType));
             }
         }
