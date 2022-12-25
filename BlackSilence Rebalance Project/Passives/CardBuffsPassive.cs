@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using BigDLL4221.Utils;
+using UnityEngine;
 
 namespace BlackSilence_Rebalance_Project.Passives
 {
     public class PassiveAbility_CardBuffsPassive_md5488 : PassiveAbilityBase
     {
-        public override void OnRoundStartAfter()
+        public override void OnDrawCard()
         {
             var buffToGive = new List<Type>();
             foreach (var card in owner.allyCardDetail.GetHand())
@@ -23,6 +24,7 @@ namespace BlackSilence_Rebalance_Project.Passives
                 var unit = RandomUtil.SelectOne(enemyList);
                 enemyList.Remove(unit);
                 unit.bufListDetail.AddBuf((BattleUnitBuf)Activator.CreateInstance(buffType));
+                SingletonBehavior<BattleManagerUI>.Instance.ui_unitListInfoSummary.UpdateCharacterProfile(unit, unit.faction, unit.hp, unit.breakDetail.breakGauge);
             }
         }
     }
