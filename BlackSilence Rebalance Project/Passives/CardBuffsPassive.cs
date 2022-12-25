@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using BigDLL4221.Utils;
+using UnityEngine;
 
 namespace BlackSilence_Rebalance_Project.Passives
 {
@@ -23,6 +24,7 @@ namespace BlackSilence_Rebalance_Project.Passives
                 var unit = RandomUtil.SelectOne(enemyList);
                 enemyList.Remove(unit);
                 unit.bufListDetail.AddBuf((BattleUnitBuf)Activator.CreateInstance(buffType));
+                SingletonBehavior<BattleManagerUI>.Instance.ui_unitListInfoSummary.UpdateCharacterProfile(unit, unit.faction, unit.hp, unit.breakDetail.breakGauge);
             }
         }
     }
