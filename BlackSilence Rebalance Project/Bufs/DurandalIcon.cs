@@ -9,7 +9,7 @@ namespace BlackSilence_Rebalance_Project.Bufs
             stack = 0;
         }
 
-        public override string BufName => "Durandal Workshop";
+        public override string BufName => "Durandal";
 
         public override string bufActivatedText =>
             "If The Black Silence targets against this opponent using Durandal, restore 1 Light and all dice on the page gain 2 Power.";
