@@ -12,7 +12,7 @@ namespace BlackSilence_Rebalance_Project.Bufs
         public override string BufName => "Wheels Industries";
 
         public override string bufActivatedText =>
-            "If The Black Silence targets against this opponent using Wheels Industries, restore 1 Light and all dice on the page gain 2 Power.";
+            "If The Black Silence targets this opponent using Wheels Industries, restore 1 Light and all dice on the page gain 2 Power.";
 
         //protected override string keywordId => "Crippling_md5488";
         protected override string keywordIconId => "WheelsIcon_md5488";
