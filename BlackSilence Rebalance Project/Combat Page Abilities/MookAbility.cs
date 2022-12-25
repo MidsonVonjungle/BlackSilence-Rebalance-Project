@@ -5,7 +5,6 @@ namespace BlackSilence_Rebalance_Project.Combat_Page_Abilities
 {
     public class DiceCardSelfAbility_Rebalance_MookWorkshop_md5488 : DiceCardSelfAbilityBase
     {
-        private const int Check = 1;
         public static string Desc = "[On Use] Restore 3 Light; draw 1 Page";
 
         public override void OnUseCard()
@@ -16,7 +15,7 @@ namespace BlackSilence_Rebalance_Project.Combat_Page_Abilities
 
             var enemybuff = card.target?.bufListDetail.GetActivatedBufList()
                 .FirstOrDefault(x => x is BattleUnitBuf_BSMookBuf_md5488);
-            if (enemybuff == null || enemybuff.stack < Check) return;
+            if (enemybuff == null) return;
             card.ApplyDiceStatBonus(DiceMatch.AllDice, new DiceStatBonus
             {
                 power = 2

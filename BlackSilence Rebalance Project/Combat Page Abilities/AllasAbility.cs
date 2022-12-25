@@ -5,7 +5,6 @@ namespace BlackSilence_Rebalance_Project.Combat_Page_Abilities
 {
     public class DiceCardSelfAbility_Rebalance_AllasWorkshop_md5488 : DiceCardSelfAbilityBase
     {
-        private const int Check = 1;
         public static string Desc = "[Start of Clash] Reduce Power of all target's dice by 2";
 
         public override void BeforeRollDice(BattleDiceBehavior behavior)
@@ -20,7 +19,7 @@ namespace BlackSilence_Rebalance_Project.Combat_Page_Abilities
         {
             var enemybuff = card.target?.bufListDetail.GetActivatedBufList()
                 .FirstOrDefault(x => x is BattleUnitBuf_BSAllasBuf_md5488);
-            if (enemybuff == null || enemybuff.stack < Check) return;
+            if (enemybuff == null) return;
             card.ApplyDiceStatBonus(DiceMatch.AllDice, new DiceStatBonus
             {
                 power = 2
