@@ -7,7 +7,7 @@ namespace BlackSilence_Rebalance_Project.Passives
 {
     public class PassiveAbility_CardBuffsPassive_md5488 : PassiveAbilityBase
     {
-        public override void OnRoundStartAfter()
+        public override void OnDrawCard()
         {
             var buffToGive = new List<Type>();
             foreach (var card in owner.allyCardDetail.GetHand())
