@@ -76,6 +76,7 @@
     <Compile Include="Combat Page Abilities\LogicAbility.cs" />
     <Compile Include="Combat Page Abilities\MookAbility.cs" />
     <Compile Include="Combat Page Abilities\OldBoysAbility.cs" />
+    <Compile Include="Combat Page Abilities\OnPlayPageAbility.cs" />
     <Compile Include="Combat Page Abilities\RangaAbility.cs" />
     <Compile Include="Combat Page Abilities\WheelsAbility.cs" />
     <Compile Include="Combat Page Abilities\ZelkovaAbility.cs" />
