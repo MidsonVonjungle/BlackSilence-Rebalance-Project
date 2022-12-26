@@ -2,12 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
-using BigDLL4221.Enum;
 using BigDLL4221.Models;
 using BigDLL4221.Utils;
 using LOR_DiceSystem;
-using MonoMod.Utils;
-using UnityEngine;
 
 namespace BlackSilence_Rebalance_Project
 {
@@ -40,13 +37,14 @@ namespace BlackSilence_Rebalance_Project
             OnInitRewards();
             OnInitCards();
         }
+
         private static void OnInitRewards()
         {
-            ModParameters.StartUpRewardOptions.Add(new RewardOptions( 
-                
+            ModParameters.StartUpRewardOptions.Add(new RewardOptions(
                 keypages: new List<LorId> { new LorId(BSRebalanceModParameters.PackageId, 10000001) }
             ));
         }
+
         private static void OnInitCards()
         {
             ModParameters.CardOptions.Add(BSRebalanceModParameters.PackageId, new List<CardOptions>
@@ -60,7 +58,7 @@ namespace BlackSilence_Rebalance_Project
                 new CardOptions(7, CardOption.NoInventory),
                 new CardOptions(8, CardOption.NoInventory),
                 new CardOptions(9, CardOption.NoInventory),
-                new CardOptions(10, CardOption.Personal),
+                new CardOptions(10, CardOption.Personal)
             });
         }
     }

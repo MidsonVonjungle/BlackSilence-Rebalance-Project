@@ -1,9 +1,4 @@
 ﻿using BlackSilence_Rebalance_Project.Passives;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BlackSilence_Rebalance_Project.Combat_Page_Abilities
 {

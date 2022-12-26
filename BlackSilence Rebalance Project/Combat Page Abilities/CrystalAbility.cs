@@ -15,6 +15,7 @@ namespace BlackSilence_Rebalance_Project.Combat_Page_Abilities
                 power = 2
             });
             owner.cardSlotDetail.RecoverPlayPointByCard(1);
+            RevampUtil.PrepareCounterDie(owner, card);
         }
     }
 }

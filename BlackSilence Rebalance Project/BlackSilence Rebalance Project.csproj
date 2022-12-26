@@ -82,6 +82,7 @@
     <Compile Include="ModParameters.cs" />
     <Compile Include="Passives\CardBuffsPassive.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RevampUtil.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

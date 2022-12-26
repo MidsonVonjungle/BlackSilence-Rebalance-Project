@@ -12,12 +12,12 @@ namespace BlackSilence_Rebalance_Project.Bufs
     {
         public BattleUnitBuf_BSRebalanceSpecialCount_md5488() : base(infinite: true, lastOneScene: false)
         {
-
         }
 
-          public override string BufName => "Furioso";
-          public override string bufActivatedText => $"Number of the Black Silence's Combat Pages used : {stack}";
-          protected override string keywordIconId => "FuriosoIcon_md5488";
+        public override string BufName => "Furioso";
+        public override string bufActivatedText => $"Number of the Black Silence's Combat Pages used : {stack}";
+
+        protected override string keywordIconId => "FuriosoIcon_md5488";
         // protected override string keywordId => "SpecialCount_md5488";
     }
 }

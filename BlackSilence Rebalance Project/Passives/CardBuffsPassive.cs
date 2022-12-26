@@ -3,20 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using BigDLL4221.Utils;
 using BlackSilence_Rebalance_Project.Bufs;
+using LOR_DiceSystem;
 
 namespace BlackSilence_Rebalance_Project.Passives
 {
     public class PassiveAbility_CardBuffsPassive_md5488 : PassiveAbilityBase
     {
+        private readonly DiceCardXmlInfo _counterCard =
+            new DiceCardXmlInfo(new LorId(BSRebalanceModParameters.PackageId,
+                10)); //TODO Card on the inv maker without any Combat Dice
+
+        private readonly List<BattleDiceBehavior> _counterDice = new List<BattleDiceBehavior>();
         private readonly List<LorId> _usedCount = new List<LorId>();
+
         public override void OnDrawCard()
         {
             var buffToGive = new List<Type>();
             foreach (var card in owner.allyCardDetail.GetHand())
             {
-                if (card.GetID().packageId != BSRebalanceModParameters.PackageId || !BSRebalanceModParameters.CardsBuff.TryGetValue(card.GetID().id, out var buffType)) continue;
+                if (card.GetID().packageId != BSRebalanceModParameters.PackageId ||
+                    !BSRebalanceModParameters.CardsBuff.TryGetValue(card.GetID().id, out var buffType)) continue;
                 buffToGive.Add(buffType);
             }
+
             var enemyList = BattleObjectManager.instance.GetAliveList(UnitUtil.ReturnOtherSideFaction(owner.faction));
             if (!buffToGive.Any() || !enemyList.Any()) return;
             foreach (var buffType in buffToGive)
@@ -25,9 +34,11 @@ namespace BlackSilence_Rebalance_Project.Passives
                 var unit = RandomUtil.SelectOne(enemyList);
                 enemyList.Remove(unit);
                 unit.bufListDetail.AddBuf((BattleUnitBuf)Activator.CreateInstance(buffType));
-                SingletonBehavior<BattleManagerUI>.Instance.ui_unitListInfoSummary.UpdateCharacterProfile(unit, unit.faction, unit.hp, unit.breakDetail.breakGauge);
+                SingletonBehavior<BattleManagerUI>.Instance.ui_unitListInfoSummary.UpdateCharacterProfile(unit,
+                    unit.faction, unit.hp, unit.breakDetail.breakGauge);
             }
         }
+
         public override void OnUseCard(BattlePlayingCardDataInUnitModel curCard)
         {
             var lorId = curCard.card.GetID();
@@ -35,6 +46,7 @@ namespace BlackSilence_Rebalance_Project.Passives
             if (!_usedCount.Contains(lorId) && BSRebalanceModParameters.BSRebalanceCards.Contains(lorId.id))
                 _usedCount.Add(lorId);
         }
+
         public override void OnWaveStart()
         {
             owner.personalEgoDetail.AddCard(BSRebalanceModParameters.BSFuriosoCard);
@@ -68,6 +80,16 @@ namespace BlackSilence_Rebalance_Project.Passives
             _usedCount.Clear();
         }
 
-        
+        public override void OnStartBattle()
+        {
+            if (!_counterDice.Any()) return;
+            owner.cardSlotDetail.keepCard.AddBehaviours(_counterCard, _counterDice);
+            _counterDice.Clear();
+        }
+
+        public void AddDie(BattleDiceBehavior die)
+        {
+            _counterDice.Add(die);
+        }
     }
 }
