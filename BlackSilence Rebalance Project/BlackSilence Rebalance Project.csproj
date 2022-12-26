@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="BSModInit.cs" />
     <Compile Include="Bufs\AllasIcon.cs" />
+    <Compile Include="Bufs\FuriosoIcon.cs" />
     <Compile Include="Bufs\WheelsIcon.cs" />
     <Compile Include="Bufs\CrystalIcon.cs" />
     <Compile Include="Bufs\DurandalIcon.cs" />
