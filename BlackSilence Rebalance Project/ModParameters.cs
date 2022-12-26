@@ -9,7 +9,7 @@ namespace BlackSilence_Rebalance_Project
         public static string PackageId = "MidsonBSRebalance.md5488";
 
         public static string Path;
-        public static LorId FuriosoCard = new LorId(PackageId, 10);
+        public static LorId BSFuriosoCard = new LorId(PackageId, 10);
 
         public static List<int> BlackSilenceOriginalCards = new List<int>
             { 702001, 702002, 702003, 702004, 702005, 702006, 702007, 702008, 702009 };

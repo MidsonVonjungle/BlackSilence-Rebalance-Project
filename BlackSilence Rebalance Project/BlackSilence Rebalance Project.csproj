@@ -59,6 +59,7 @@
     <Compile Include="BSModInit.cs" />
     <Compile Include="Bufs\AllasIcon.cs" />
     <Compile Include="Bufs\FuriosoIcon.cs" />
+    <Compile Include="Bufs\TempCardBS.cs" />
     <Compile Include="Bufs\WheelsIcon.cs" />
     <Compile Include="Bufs\CrystalIcon.cs" />
     <Compile Include="Bufs\DurandalIcon.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="Combat Page Abilities\AllasAbility.cs" />
     <Compile Include="Combat Page Abilities\CrystalAbility.cs" />
     <Compile Include="Combat Page Abilities\DurandalAbility.cs" />
+    <Compile Include="Combat Page Abilities\FuriosoCard.cs" />
     <Compile Include="Combat Page Abilities\LogicAbility.cs" />
     <Compile Include="Combat Page Abilities\MookAbility.cs" />
     <Compile Include="Combat Page Abilities\OldBoysAbility.cs" />

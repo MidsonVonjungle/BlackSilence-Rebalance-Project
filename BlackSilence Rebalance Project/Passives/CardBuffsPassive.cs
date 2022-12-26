@@ -30,7 +30,7 @@ namespace BlackSilence_Rebalance_Project.Passives
         }
         public override void OnWaveStart()
         {
-            owner.personalEgoDetail.AddCard(BSRebalanceModParameters.FuriosoCard);
+            owner.personalEgoDetail.AddCard(BSRebalanceModParameters.BSFuriosoCard);
         }
 
         public override void OnRoundStart()
@@ -44,8 +44,8 @@ namespace BlackSilence_Rebalance_Project.Passives
                     battleDiceCardModel.AddBuf(new BattleDiceCardBuf_BSRebalanceEgoCount_md5488());
             }
 
-            owner.bufListDetail.RemoveBufAll(typeof(BattleDiceCardBuf_BSRebalanceEgoCount_md5488));
-            owner.bufListDetail.AddBuf(new BattleDiceCardBuf_BSRebalanceEgoCount_md5488
+            owner.bufListDetail.RemoveBufAll(typeof(BattleUnitBuf_BSRebalanceSpecialCount_md5488));
+            owner.bufListDetail.AddBuf(new BattleUnitBuf_BSRebalanceSpecialCount_md5488
             {
                 stack = _usedCount.Count
             });
