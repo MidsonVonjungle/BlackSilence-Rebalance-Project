@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using BigDLL4221.Utils;
 using BlackSilence_Rebalance_Project.Bufs;
 using LOR_DiceSystem;
@@ -9,9 +10,7 @@ namespace BlackSilence_Rebalance_Project.Passives
 {
     public class PassiveAbility_CardBuffsPassive_md5488 : PassiveAbilityBase
     {
-        private readonly DiceCardXmlInfo _counterCard =
-            new DiceCardXmlInfo(new LorId(BSRebalanceModParameters.PackageId,
-                11));
+        private BattleDiceCardModel _counterCard;
 
         private readonly List<BattleDiceBehavior> _counterDice = new List<BattleDiceBehavior>();
         private readonly List<LorId> _usedCount = new List<LorId>();
@@ -55,6 +54,9 @@ namespace BlackSilence_Rebalance_Project.Passives
         public override void OnWaveStart()
         {
             owner.personalEgoDetail.AddCard(BSRebalanceModParameters.BSFuriosoCard);
+            _counterCard = BattleDiceCardModel.CreatePlayingCard(
+                ItemXmlDataList.instance.GetCardItem(new LorId(BSRebalanceModParameters.PackageId,
+                    11)));
         }
 
         public override void OnRoundStart()

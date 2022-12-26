@@ -6,7 +6,6 @@ using BigDLL4221.Enum;
 using BigDLL4221.Models;
 using BigDLL4221.Utils;
 using LOR_DiceSystem;
-using UnityEngine;
 
 namespace BlackSilence_Rebalance_Project
 {
@@ -65,23 +64,25 @@ namespace BlackSilence_Rebalance_Project
                 new CardOptions(10, CardOption.Personal)
             });
         }
+
         private static void OnInitKeypages()
         {
             ModParameters.KeypageOptions.Add(BSRebalanceModParameters.PackageId, new List<KeypageOptions>
             {
                 new KeypageOptions(10000001, isDeckFixed: true, everyoneCanEquip: true,
-                    bookCustomOptions: new BookCustomOptions(name: "Angelica")),
+                    bookCustomOptions: new BookCustomOptions("Angelica")),
 
-                new KeypageOptions(10000002, isDeckFixed: true, everyoneCanEquip: true, bookCustomOptions: new BookCustomOptions())
+                new KeypageOptions(10000002, isDeckFixed: true, everyoneCanEquip: true,
+                    bookCustomOptions: new BookCustomOptions())
             });
         }
+
         private static void OnInitSprites()
         {
             ModParameters.SpriteOptions.Add(BSRebalanceModParameters.PackageId, new List<SpriteOptions>
             {
-                new SpriteOptions(SpriteEnum.Custom, 10000001, "Angelica_Thumbnail_md5488"),
+                new SpriteOptions(SpriteEnum.Custom, 10000001, "Angelica_Thumbnail_md5488")
             });
         }
-
     }
 }
