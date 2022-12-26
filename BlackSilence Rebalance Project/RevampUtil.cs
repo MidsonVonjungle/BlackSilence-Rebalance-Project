@@ -14,8 +14,8 @@ namespace BlackSilence_Rebalance_Project
             var die = card.card.CreateDiceCardBehaviorList().LastOrDefault(x => x.Type == BehaviourType.Atk);
             if (die == null) return;
             die.behaviourInCard.Copy();
-            die.behaviourInCard.Min = 4;
-            die.behaviourInCard.Dice = 8;
+            die.behaviourInCard.Min = 3;
+            die.behaviourInCard.Dice = 7;
             typedPassive.AddDie(die);
         }
     }

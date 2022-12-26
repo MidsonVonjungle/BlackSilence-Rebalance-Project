@@ -11,7 +11,7 @@ namespace BlackSilence_Rebalance_Project.Passives
     {
         private readonly DiceCardXmlInfo _counterCard =
             new DiceCardXmlInfo(new LorId(BSRebalanceModParameters.PackageId,
-                10)); //TODO Card on the inv maker without any Combat Dice
+                11));
 
         private readonly List<BattleDiceBehavior> _counterDice = new List<BattleDiceBehavior>();
         private readonly List<LorId> _usedCount = new List<LorId>();
