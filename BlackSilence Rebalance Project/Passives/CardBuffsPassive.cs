@@ -25,7 +25,6 @@ namespace BlackSilence_Rebalance_Project.Passives
                     !BSRebalanceModParameters.CardsBuff.TryGetValue(card.GetID().id, out var buffType)) continue;
                 buffToGive.Add(buffType);
             }
-
             var enemyList = BattleObjectManager.instance.GetAliveList(UnitUtil.ReturnOtherSideFaction(owner.faction));
             if (!buffToGive.Any() || !enemyList.Any()) return;
             foreach (var buffType in buffToGive)
@@ -36,6 +35,12 @@ namespace BlackSilence_Rebalance_Project.Passives
                 unit.bufListDetail.AddBuf((BattleUnitBuf)Activator.CreateInstance(buffType));
                 SingletonBehavior<BattleManagerUI>.Instance.ui_unitListInfoSummary.UpdateCharacterProfile(unit,
                     unit.faction, unit.hp, unit.breakDetail.breakGauge);
+            }
+            foreach (var enemy in enemyList)
+            {
+                enemy.bufListDetail.AddBuf((BattleUnitBuf)Activator.CreateInstance(RandomUtil.SelectOne(buffToGive)));
+                SingletonBehavior<BattleManagerUI>.Instance.ui_unitListInfoSummary.UpdateCharacterProfile(enemy,
+                    enemy.faction, enemy.hp, enemy.breakDetail.breakGauge);
             }
         }
 
