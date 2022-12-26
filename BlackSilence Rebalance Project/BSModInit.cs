@@ -60,6 +60,7 @@ namespace BlackSilence_Rebalance_Project
                 new CardOptions(7, CardOption.NoInventory),
                 new CardOptions(8, CardOption.NoInventory),
                 new CardOptions(9, CardOption.NoInventory),
+                new CardOptions(10, CardOption.Personal),
             });
         }
     }

@@ -28,6 +28,13 @@ namespace BlackSilence_Rebalance_Project.Passives
                 SingletonBehavior<BattleManagerUI>.Instance.ui_unitListInfoSummary.UpdateCharacterProfile(unit, unit.faction, unit.hp, unit.breakDetail.breakGauge);
             }
         }
+        public override void OnUseCard(BattlePlayingCardDataInUnitModel curCard)
+        {
+            var lorId = curCard.card.GetID();
+            if (lorId.packageId != BSRebalanceModParameters.PackageId) return;
+            if (!_usedCount.Contains(lorId) && BSRebalanceModParameters.BSRebalanceCards.Contains(lorId.id))
+                _usedCount.Add(lorId);
+        }
         public override void OnWaveStart()
         {
             owner.personalEgoDetail.AddCard(BSRebalanceModParameters.BSFuriosoCard);

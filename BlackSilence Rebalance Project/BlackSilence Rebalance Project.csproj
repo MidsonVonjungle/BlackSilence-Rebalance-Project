@@ -69,6 +69,7 @@
     <Compile Include="Bufs\RangaIcon.cs" />
     <Compile Include="Bufs\ZelkovaIcon.cs" />
     <Compile Include="Combat Page Abilities\AllasAbility.cs" />
+    <Compile Include="Combat Page Abilities\BSRebalanceBaseCard.cs" />
     <Compile Include="Combat Page Abilities\CrystalAbility.cs" />
     <Compile Include="Combat Page Abilities\DurandalAbility.cs" />
     <Compile Include="Combat Page Abilities\FuriosoCard.cs" />
