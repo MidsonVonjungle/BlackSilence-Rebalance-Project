@@ -6,6 +6,7 @@ using BigDLL4221.Enum;
 using BigDLL4221.Models;
 using BigDLL4221.Utils;
 using LOR_DiceSystem;
+using MonoMod.Utils;
 
 namespace BlackSilence_Rebalance_Project
 {
@@ -39,6 +40,7 @@ namespace BlackSilence_Rebalance_Project
             OnInitCards();
             OnInitKeypages();
             OnInitSprites();
+            OnInitSkins();
         }
 
         private static void OnInitRewards()
@@ -82,6 +84,36 @@ namespace BlackSilence_Rebalance_Project
             ModParameters.SpriteOptions.Add(BSRebalanceModParameters.PackageId, new List<SpriteOptions>
             {
                 new SpriteOptions(SpriteEnum.Custom, 10000001, "Angelica_Thumbnail_md5488")
+            });
+        }
+        private static void OnInitSkins()
+        {
+            ModParameters.SkinOptions.AddRange(new Dictionary<string, SkinOptions>
+            {
+                {
+                    "Angelica", new SkinOptions(BSRebalanceModParameters.PackageId,
+                        motionSounds: new Dictionary<MotionDetail, MotionSound>
+                        {
+                            { MotionDetail.J, new MotionSound("Roland_DuelSword.wav") },
+                            { MotionDetail.H, new MotionSound("Roland_Hammer.wav") },
+                            { MotionDetail.Z, new MotionSound("Bayyard_Piercing.wav") },
+                            { MotionDetail.E, new MotionSound("Roland_Evasion.wav") },
+                            { MotionDetail.G, new MotionSound("Roland_Guard.wav") },
+                            { MotionDetail.S1, new MotionSound("Roland_Revolver.wav") },
+                            { MotionDetail.S2, new MotionSound("Roland_Revolver.wav") },
+                            { MotionDetail.S3, new MotionSound("Roland_LongSword_Start.wav") },
+                            { MotionDetail.S5, new MotionSound("Roland_Gauntlet1.wav") },
+                            { MotionDetail.S6, new MotionSound("Roland_Gauntlet1.wav") },
+                            { MotionDetail.S7, new MotionSound("Roland_ShortSword", isBaseSoundWin: true) },
+                            { MotionDetail.S8, new MotionSound("Roland_Axe.wav") },
+                            { MotionDetail.S9, new MotionSound("Roland_Mace.wav") },
+                            { MotionDetail.S10, new MotionSound("Roland_GreatSword.wav") },
+                            { MotionDetail.S11, new MotionSound("Roland_Shotgun.wav") },
+                            { MotionDetail.S12, new MotionSound("Roland_Duralandal_Down.wav") },
+                            { MotionDetail.S13, new MotionSound("Roland_Duralandal_Up.wav") },
+                            { MotionDetail.S14, new MotionSound("Roland_Duralandal_Strong.wav", isBaseSoundWin: true) },
+                        })
+                }
             });
         }
     }
