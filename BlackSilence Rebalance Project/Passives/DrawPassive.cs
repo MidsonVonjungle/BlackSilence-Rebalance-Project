@@ -10,10 +10,17 @@ namespace BlackSilence_Rebalance_Project.Passives
 {
     public class PassiveAbility_AngelicaDrawPassive_md5488 : PassiveAbilityBase
     {
-        public override void OnRoundStart()
+        //public override void OnRoundStart()
+        //{
+        //    UnitUtil.DrawUntilX(owner, owner.emotionDetail.EmotionLevel);
+        //}
+        //This is the older version passive
+        public override void OnRoundEnd()
         {
-            UnitUtil.DrawUntilX(owner, owner.emotionDetail.EmotionLevel);
+            if (this.owner.allyCardDetail.GetHand().Count <= 3)
+                return;
+            this.owner.allyCardDetail.DrawCards(1);
         }
-        //public override void OnWaveStart() => owner.allyCardDetail.DrawCards(2);
+        public override void OnWaveStart() => this.owner.allyCardDetail.DrawCards(2);
     }
 }
