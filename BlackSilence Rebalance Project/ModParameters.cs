@@ -37,7 +37,7 @@ namespace BlackSilence_Rebalance_Project
         public MechUtilBase Util = new MechUtilBase(new MechUtilBaseModel(additionalStartDraw: 2,
             personalCards: new Dictionary<LorId, PersonalCardOptions>
             {
-                { new LorId(BSRebalanceModParameters.PackageId, 12), new PersonalCardOptions() },
+                { new LorId(BSRebalanceModParameters.PackageId, 12), new PersonalCardOptions(onPlayCard:true) },
             }));
     }
 }

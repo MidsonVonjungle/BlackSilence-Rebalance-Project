@@ -49,6 +49,7 @@ namespace BlackSilence_Rebalance_Project.Passives
 
         public override void OnUseCard(BattlePlayingCardDataInUnitModel curCard)
         {
+            base.OnUseCard(curCard);
             var lorId = curCard.card.GetID();
             if (lorId.packageId != BSRebalanceModParameters.PackageId) return;
             if (!_usedCount.Contains(lorId) && BSRebalanceModParameters.BSRebalanceCards.Contains(lorId.id))
@@ -57,6 +58,7 @@ namespace BlackSilence_Rebalance_Project.Passives
 
         public override void OnWaveStart()
         {
+            base.OnWaveStart();
             owner.personalEgoDetail.AddCard(BSRebalanceModParameters.BSFuriosoCard);
             _counterCard = BattleDiceCardModel.CreatePlayingCard(
                 ItemXmlDataList.instance.GetCardItem(new LorId(BSRebalanceModParameters.PackageId,
@@ -65,6 +67,7 @@ namespace BlackSilence_Rebalance_Project.Passives
 
         public override void OnRoundStart()
         {
+            base.OnRoundStart();
             foreach (var battleDiceCardModel in owner.allyCardDetail.GetAllDeck())
             {
                 battleDiceCardModel.RemoveBuf<BattleDiceCardBuf_BSRebalanceEgoCount_md5488>();
@@ -93,6 +96,7 @@ namespace BlackSilence_Rebalance_Project.Passives
 
         public override void OnStartBattle()
         {
+            base.OnStartBattle();
             if (!_counterDice.Any()) return;
             owner.cardSlotDetail.keepCard.AddBehaviours(_counterCard, _counterDice);
             _counterDice.Clear();
