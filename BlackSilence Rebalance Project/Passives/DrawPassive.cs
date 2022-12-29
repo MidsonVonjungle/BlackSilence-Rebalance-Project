@@ -18,8 +18,7 @@ namespace BlackSilence_Rebalance_Project.Passives
         public override void OnRoundEnd()
         {
             if (this.owner.allyCardDetail.GetHand().Count <= 3)
-                return;
-            this.owner.allyCardDetail.DrawCards(1);
+                this.owner.allyCardDetail.DrawCards(1);
         }
         public override void OnWaveStart() => this.owner.allyCardDetail.DrawCards(2);
     }
