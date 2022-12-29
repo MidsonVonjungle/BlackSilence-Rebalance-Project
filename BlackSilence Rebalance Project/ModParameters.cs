@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using BigDLL4221.BaseClass;
+using BigDLL4221.Models;
 using BlackSilence_Rebalance_Project.Bufs;
+using LOR_XML;
 
 namespace BlackSilence_Rebalance_Project
 {
@@ -28,5 +31,13 @@ namespace BlackSilence_Rebalance_Project
             { 8, typeof(BattleUnitBuf_BSWheelsBuf_md5488) },
             { 2, typeof(BattleUnitBuf_BSZelkovaBuf_md5488) }
         };
+    }
+    public class BSRebalanceUtil
+    {
+        public MechUtilBase Util = new MechUtilBase(new MechUtilBaseModel(additionalStartDraw: 2,
+            personalCards: new Dictionary<LorId, PersonalCardOptions>
+            {
+                { new LorId(BSRebalanceModParameters.PackageId, 12), new PersonalCardOptions() },
+            }));
     }
 }

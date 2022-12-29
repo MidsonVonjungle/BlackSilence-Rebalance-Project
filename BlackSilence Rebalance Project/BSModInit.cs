@@ -7,6 +7,7 @@ using BigDLL4221.Models;
 using BigDLL4221.Utils;
 using LOR_DiceSystem;
 using MonoMod.Utils;
+using UnityEngine;
 
 namespace BlackSilence_Rebalance_Project
 {
@@ -63,7 +64,9 @@ namespace BlackSilence_Rebalance_Project
                 new CardOptions(7, CardOption.NoInventory),
                 new CardOptions(8, CardOption.NoInventory),
                 new CardOptions(9, CardOption.NoInventory),
-                new CardOptions(10, CardOption.Personal)
+                new CardOptions(10, CardOption.Personal),
+                new CardOptions(11, CardOption.Personal),
+                new CardOptions(12, CardOption.Personal),
             });
         }
 
@@ -73,9 +76,6 @@ namespace BlackSilence_Rebalance_Project
             {
                 new KeypageOptions(10000001, isDeckFixed: true, everyoneCanEquip: true,
                     bookCustomOptions: new BookCustomOptions("Angelica")),
-
-                new KeypageOptions(10000002, isDeckFixed: true, everyoneCanEquip: true,
-                    bookCustomOptions: new BookCustomOptions())
             });
         }
 

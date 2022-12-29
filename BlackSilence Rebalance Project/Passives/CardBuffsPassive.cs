@@ -1,20 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
+using BigDLL4221.Passives;
 using BigDLL4221.Utils;
 using BlackSilence_Rebalance_Project.Bufs;
-using LOR_DiceSystem;
 
 namespace BlackSilence_Rebalance_Project.Passives
 {
-    public class PassiveAbility_CardBuffsPassive_md5488 : PassiveAbilityBase
+    public class PassiveAbility_CardBuffsPassive_md5488 : PassiveAbility_PlayerMechBase_DLL4221
     {
         private BattleDiceCardModel _counterCard;
 
         private readonly List<BattleDiceBehavior> _counterDice = new List<BattleDiceBehavior>();
         private readonly List<LorId> _usedCount = new List<LorId>();
 
+        public override void Init(BattleUnitModel self)
+        {
+            base.Init(self);
+            SetUtil(new BSRebalanceUtil().Util);
+        }
         public override void OnDrawCard()
         {
             var buffToGive = new List<Type>();

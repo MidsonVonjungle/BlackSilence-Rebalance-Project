@@ -6,6 +6,8 @@ namespace BlackSilence_Rebalance_Project.Combat_Page_Abilities
 {
     public class DiceCardSelfAbility_OnPlayPage_md5488 : DiceCardSelfAbilityBase
     {
+
+        public static string Desc = "[On Use] Mark the opponent with one of The Black Silence's weapons.";
         public override void OnUseInstance(BattleUnitModel unit, BattleDiceCardModel self, BattleUnitModel targetUnit)
         {
             Activate(targetUnit, unit);
