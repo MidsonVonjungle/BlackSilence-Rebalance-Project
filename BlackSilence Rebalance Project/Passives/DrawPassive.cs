@@ -20,6 +20,15 @@ namespace BlackSilence_Rebalance_Project.Passives
             if (this.owner.allyCardDetail.GetHand().Count <= 3)
                 this.owner.allyCardDetail.DrawCards(1);
         }
-        public override void OnWaveStart() => this.owner.allyCardDetail.DrawCards(2);
+        //public override void OnWaveStart() => this.owner.allyCardDetail.DrawCards(2);
+        public override void BeforeRollDice(BattleDiceBehavior behavior)
+        {
+
+            if (this.owner.emotionDetail.EmotionLevel >= 3)
+            behavior.ApplyDiceStatBonus(new DiceStatBonus()
+            {
+                min = 2
+            });
+        }
     }
 }
