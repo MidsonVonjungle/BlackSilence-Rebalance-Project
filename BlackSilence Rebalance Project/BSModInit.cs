@@ -111,7 +111,7 @@ namespace BlackSilence_Rebalance_Project
                             { MotionDetail.S11, new MotionSound("Roland_Shotgun.wav") },
                             { MotionDetail.S12, new MotionSound("Roland_Duralandal_Down.wav") },
                             { MotionDetail.S13, new MotionSound("Roland_Duralandal_Up.wav") },
-                            { MotionDetail.S14, new MotionSound("Roland_Duralandal_Strong.wav", isBaseSoundWin: true) },
+                            { MotionDetail.S14, new MotionSound("Roland_Duralandal_Strong", isBaseSoundWin: true) },
                         })
                 }
             });
