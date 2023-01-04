@@ -5,6 +5,7 @@ using System.Reflection;
 using BigDLL4221.Enum;
 using BigDLL4221.Models;
 using BigDLL4221.Utils;
+using CustomMapUtility;
 using LOR_DiceSystem;
 using MonoMod.Utils;
 using UnityEngine;
@@ -27,7 +28,8 @@ namespace BlackSilence_Rebalance_Project
             LocalizeUtil.RemoveError();
             CardUtil.InitKeywordsList(new List<Assembly> { Assembly.GetExecutingAssembly() });
             ArtUtil.InitCustomEffects(new List<Assembly> { Assembly.GetExecutingAssembly() });
-            CustomMapHandler.ModResources.CacheInit.InitCustomMapFiles(Assembly.GetExecutingAssembly());
+            CustomMapHandler.GetCMU(BSRebalanceModParameters.PackageId);
+            //CustomMapHandler.ModResources.CacheInit.InitCustomMapFiles(Assembly.GetExecutingAssembly());
         }
 
         private static void OnInitParameters()
