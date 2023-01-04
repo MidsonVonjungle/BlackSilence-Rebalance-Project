@@ -44,6 +44,7 @@ namespace BlackSilence_Rebalance_Project
             OnInitKeypages();
             OnInitSprites();
             OnInitSkins();
+            OnInitPassives();
         }
 
         private static void OnInitRewards()
@@ -113,9 +114,17 @@ namespace BlackSilence_Rebalance_Project
                             { MotionDetail.S11, new MotionSound("Roland_Shotgun.wav") },
                             { MotionDetail.S12, new MotionSound("Roland_Duralandal_Down.wav") },
                             { MotionDetail.S13, new MotionSound("Roland_Duralandal_Up.wav") },
-                            { MotionDetail.S14, new MotionSound("Roland_Duralandal_Strong.wav", isBaseSoundWin: true) },
+                            { MotionDetail.S14, new MotionSound("Roland_Duralandal_Strong", isBaseSoundWin: true) },
                         })
                 }
+            });
+        }
+        private static void OnInitPassives()
+        {
+            ModParameters.PassiveOptions.Add(BSRebalanceModParameters.PackageId, new List<PassiveOptions>
+            {
+                new PassiveOptions(1, false),
+                new PassiveOptions(2, cannotBeUsedWithPassives: new List<LorId> { new LorId(260004)}),
             });
         }
     }

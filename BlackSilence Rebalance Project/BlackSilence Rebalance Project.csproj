@@ -81,6 +81,7 @@
     <Compile Include="Combat Page Abilities\RangaAbility.cs" />
     <Compile Include="Combat Page Abilities\WheelsAbility.cs" />
     <Compile Include="Combat Page Abilities\ZelkovaAbility.cs" />
+    <Compile Include="Dice Effects\DestroyAllDice.cs" />
     <Compile Include="ModParameters.cs" />
     <Compile Include="Passives\CardBuffsPassive.cs" />
     <Compile Include="Passives\DrawPassive.cs" />
