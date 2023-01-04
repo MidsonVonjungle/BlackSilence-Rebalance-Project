@@ -5,6 +5,7 @@ using System.Reflection;
 using BigDLL4221.Enum;
 using BigDLL4221.Models;
 using BigDLL4221.Utils;
+using CustomMapUtility;
 using LOR_DiceSystem;
 using MonoMod.Utils;
 using UnityEngine;
@@ -27,7 +28,8 @@ namespace BlackSilence_Rebalance_Project
             LocalizeUtil.RemoveError();
             CardUtil.InitKeywordsList(new List<Assembly> { Assembly.GetExecutingAssembly() });
             ArtUtil.InitCustomEffects(new List<Assembly> { Assembly.GetExecutingAssembly() });
-            CustomMapHandler.ModResources.CacheInit.InitCustomMapFiles(Assembly.GetExecutingAssembly());
+            CustomMapHandler.GetCMU(BSRebalanceModParameters.PackageId);
+            //CustomMapHandler.ModResources.CacheInit.InitCustomMapFiles(Assembly.GetExecutingAssembly());
         }
 
         private static void OnInitParameters()
@@ -122,7 +124,10 @@ namespace BlackSilence_Rebalance_Project
             ModParameters.PassiveOptions.Add(BSRebalanceModParameters.PackageId, new List<PassiveOptions>
             {
                 new PassiveOptions(1, false),
-                new PassiveOptions(2, cannotBeUsedWithPassives: new List<LorId> { new LorId(260004)}),
+                new PassiveOptions(2, cannotBeUsedWithPassives: new List<LorId> { 
+                    new LorId(260004),
+                    new LorId("WhiteRoland.md588", 4),
+                }),
             });
         }
     }

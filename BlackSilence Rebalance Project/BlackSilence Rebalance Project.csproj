@@ -31,11 +31,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="1BigDLL4221">
+    <Reference Include="1BigDLL4221, Version=1.8.0.0, Culture=neutral, PublicKeyToken=899fe4babbe8c2f7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>F:\Softwares\Real Ruina modding hours\DLL codes\1BigDLL4221.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp">
       <HintPath>F:\Steam\steamapps\common\Library Of Ruina\LibraryOfRuina_Data\Managed\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="CustomMapUtility">
+      <HintPath>F:\Softwares\Real Ruina modding hours\DLL codes\CustomMapUtility.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Cecil">
       <HintPath>F:\Softwares\Real Ruina modding hours\DLL codes\Mono.Cecil.dll</HintPath>
