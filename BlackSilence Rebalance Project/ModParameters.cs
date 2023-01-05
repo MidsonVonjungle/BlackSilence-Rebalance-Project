@@ -39,6 +39,6 @@ namespace BlackSilence_Rebalance_Project
             personalCards: new Dictionary<LorId, PersonalCardOptions>
             {
                 { new LorId(BSRebalanceModParameters.PackageId, 12), new PersonalCardOptions(onPlayCard:true) },
-            }), BSRebalanceModParameters.PackageId);
+            }),BSRebalanceModParameters.PackageId);
     }
 }
