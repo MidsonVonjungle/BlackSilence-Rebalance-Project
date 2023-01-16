@@ -15,4 +15,7 @@ namespace BlackSilence_Rebalance_Project.Dice_Effects
                 card?.target?.currentDiceAction?.DestroyDice(DiceMatch.AllDice);
         }
     }
+    //There is an 'X' animation you could trigger on a combat page to destroy all dice, Greta's Gold card has it
+    //Unfortunally using it for mods could soft-lock your game if clashing against certain cards
+    //I guess we can't have everything
 }

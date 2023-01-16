@@ -86,6 +86,11 @@
     <Compile Include="Combat Page Abilities\WheelsAbility.cs" />
     <Compile Include="Combat Page Abilities\ZelkovaAbility.cs" />
     <Compile Include="Dice Effects\DestroyAllDice.cs" />
+    <Compile Include="EffectRes\1BSAxe.cs" />
+    <Compile Include="EffectRes\2BSAxe.cs" />
+    <Compile Include="EffectRes\3BSHammer.cs" />
+    <Compile Include="EffectRes\4BSGauntlet1.cs" />
+    <Compile Include="EffectRes\5BSGauntlet2.cs" />
     <Compile Include="ModParameters.cs" />
     <Compile Include="Passives\CardBuffsPassive.cs" />
     <Compile Include="Passives\DrawPassive.cs" />

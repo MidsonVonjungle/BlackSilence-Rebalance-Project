@@ -23,4 +23,6 @@ public class BehaviourAction_RangaAttack_md5488 : BehaviourActionBase
             updateDir: false, delay: 0.5f));
         return movingAction1;
     }
+    //I created this because the VFX wouldn't exactly match Angelica's knife in the sprite, neither does this one
+    //I guess its staying that way
 }

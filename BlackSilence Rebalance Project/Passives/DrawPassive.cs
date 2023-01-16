@@ -24,5 +24,8 @@ namespace BlackSilence_Rebalance_Project.Passives
                 min = 2
             });
         }
+
+        //I had to come up with something to deal with the card draw, truth be told, this just makes
+        //the Black Silence an Arbiter in draw, you'll only run out of cards if you're retarded
     }
 }

@@ -45,6 +45,9 @@ namespace BlackSilence_Rebalance_Project.Passives
                 SingletonBehavior<BattleManagerUI>.Instance.ui_unitListInfoSummary.UpdateCharacterProfile(enemy,
                     enemy.faction, enemy.hp, enemy.breakDetail.breakGauge);
             }
+            //Kamiyo did this code for me, truth be told, I have no clue on how it really works
+            //But he knows what he was doing, the code not only works, its optimal and doesn't clash with anything else
+            //Sometimes is good having someone who knows what they're doing
         }
 
         public override void OnUseCard(BattlePlayingCardDataInUnitModel curCard)

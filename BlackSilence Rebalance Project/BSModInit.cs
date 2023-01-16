@@ -116,6 +116,8 @@ namespace BlackSilence_Rebalance_Project
                             { MotionDetail.S13, new MotionSound("Roland_Duralandal_Up.wav") },
                             { MotionDetail.S14, new MotionSound("Roland_Duralandal_Strong", isBaseSoundWin: true) },
                         })
+                    //I could have the code use sounds directly from the game, however, what I wasn't expecting was for the exported sounds
+                    //to not work at all, so I told the code to use the base game ones... fuck me, why does this even happen?
                 }
             });
         }
@@ -129,6 +131,11 @@ namespace BlackSilence_Rebalance_Project
                     new LorId("WhiteRoland.md588", 4),
                 }),
             });
+            //This will prevent Twelve Fixers from being used together with 'Ill Colore de Charlesmagne', having both at once
+            //would have been too strong
+            //And it includes Paladin from my White Noise, I like to think if all Twelve Fixers were present in the game, all their
+            //min reducing passives would have a tiny extra flavor to accompany it, or at least Roland would, he's the leader of the Charles'
+            //Office after all
         }
     }
 }
