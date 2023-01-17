@@ -60,6 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BehaviorActions\AngelicaFurioso.cs" />
     <Compile Include="BehaviorActions\RangaAttack.cs" />
     <Compile Include="BSModInit.cs" />
     <Compile Include="Bufs\AllasIcon.cs" />
@@ -87,7 +88,7 @@
     <Compile Include="Combat Page Abilities\ZelkovaAbility.cs" />
     <Compile Include="Dice Effects\DestroyAllDice.cs" />
     <Compile Include="EffectRes\1BSAxe.cs" />
-    <Compile Include="EffectRes\2BSAxe.cs" />
+    <Compile Include="EffectRes\2BSMace.cs" />
     <Compile Include="EffectRes\3BSHammer.cs" />
     <Compile Include="EffectRes\4BSGauntlet1.cs" />
     <Compile Include="EffectRes\5BSGauntlet2.cs" />

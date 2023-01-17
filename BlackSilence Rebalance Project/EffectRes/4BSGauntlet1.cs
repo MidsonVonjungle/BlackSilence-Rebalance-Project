@@ -7,7 +7,7 @@ namespace TheWhiteNoiseProject.Sprite_Attack_Effects
     {
         public override void Initialize(BattleUnitView self, BattleUnitView target, float destroyTime)
         {
-            SetParameters(BSRebalanceModParameters.Path, 0.54f, 0.23f);
+            SetParameters(BSRebalanceModParameters.Path, 0.54f, 0.4f, 2.8f);
             base.Initialize(self, target, destroyTime);
         }
     }

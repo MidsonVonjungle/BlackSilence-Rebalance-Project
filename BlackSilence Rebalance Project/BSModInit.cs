@@ -99,7 +99,7 @@ namespace BlackSilence_Rebalance_Project
                         {
                             { MotionDetail.J, new MotionSound("Roland_DuelSword.wav") },
                             { MotionDetail.H, new MotionSound("Roland_Hammer.wav") },
-                            { MotionDetail.Z, new MotionSound("Bayyard_Piercing.wav") },
+                            { MotionDetail.Z, new MotionSound("Roland_Spear.wav") },
                             { MotionDetail.E, new MotionSound("Roland_Evasion.wav") },
                             { MotionDetail.G, new MotionSound("Roland_Guard.wav") },
                             { MotionDetail.S1, new MotionSound("Roland_Revolver.wav") },
